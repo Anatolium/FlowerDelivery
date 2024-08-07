@@ -1,20 +1,32 @@
-<!doctype html>
+{% load static %}
+<! doctype html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <link rel="stylesheet" href="{% static 'FlowerDeliveryApp/css/style.css' %}">
     {% block title %}
 
     {% endblock %}
 
 </head>
 <body>
-{% include 'FlowerDeliveryApp/nav.html'%}
-{% block content %}
-
-{% endblock %}
+<!--{% include 'FlowerDeliveryApp/nav.html'%}-->
+<body>
+    <aside>
+        <img src="{% static 'FlowerDeliveryApp/img/red-cat.jpg' %}" alt="Red Cat" width="150px">
+        <span>{{ caption }}</span>
+        <ul>
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'page-02' %}">Вторая</a></li>
+        </ul>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
 </body>
 </html>

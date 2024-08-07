@@ -3,8 +3,10 @@ from django.http import HttpResponse
 
 
 def index(request):
-    # return HttpResponse("<h1>Это мой итоговый проект на Django</h1>")
-    return render(request, 'FlowerDeliveryApp/index.html')
+    data = {
+        'caption': "FlowerDelivery"
+    }
+    return render(request, 'FlowerDeliveryApp/index.html', data)
 
 
 def new(request):
